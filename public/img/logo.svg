@@ -1,0 +1,36 @@
+<svg width="200" height="60" viewBox="0 0 200 60" xmlns="http://www.w3.org/2000/svg">
+  <!-- Stylized M shape -->
+  <path d="M10,15 L20,15 L25,35 L30,15 L40,15 L45,45 L35,45 L33,25 L28,45 L22,45 L17,25 L15,45 L5,45 Z" fill="#2E5EAA"/>
+  
+  <!-- I -->
+  <rect x="50" y="15" width="10" height="30" fill="#2E5EAA"/>
+  
+  <!-- R -->
+  <path d="M65,15 h20 a10,10 0 0,1 0,20 h-10 l12,10 h-12 l-10,-10 v10 h-10 z" fill="#2E5EAA"/>
+  <path d="M75,25 h5 a5,5 0 0,0 0,-10 h-5 z" fill="#FFFFFF"/>
+  
+  <!-- A -->
+  <path d="M100,15 h10 l10,30 h-10 l-1.5,-5 h-7 l-1.5,5 h-10 z" fill="#2E5EAA"/>
+  <path d="M103.5,30 h5 l-2.5,-8 z" fill="#FFFFFF"/>
+  
+  <!-- A in ACADEMY -->
+  <path d="M120,15 h10 l10,30 h-10 l-1.5,-5 h-7 l-1.5,5 h-10 z" fill="#E6A919"/>
+  <path d="M123.5,30 h5 l-2.5,-8 z" fill="#FFFFFF"/>
+  
+  <!-- C -->
+  <path d="M145,15 a15,15 0 0,1 15,15 a15,15 0 0,1 -15,15 v-7 a8,8 0 0,0 8,-8 a8,8 0 0,0 -8,-8 z" fill="#E6A919"/>
+  
+  <!-- A again -->
+  <path d="M165,15 h10 l10,30 h-10 l-1.5,-5 h-7 l-1.5,5 h-10 z" fill="#E6A919"/>
+  <path d="M168.5,30 h5 l-2.5,-8 z" fill="#FFFFFF"/>
+  
+  <!-- D -->
+  <path d="M185,15 h15 a15,15 0 0,1 0,30 h-15 z" fill="#E6A919"/>
+  <path d="M195,37 a7,7 0 0,0 0,-14 h-2 v14 z" fill="#FFFFFF"/>
+  
+  <!-- E -->
+  <path d="M215,15 h20 v8 h-10 v6 h8 v8 h-8 v6 h10 v8 h-20 z" fill="#E6A919"/>
+  
+  <!-- Y -->
+  <path d="M240,15 h10 l5,10 l5,-10 h10 l-10,15 v15 h-10 v-15 z" fill="#E6A919"/>
+</svg> 

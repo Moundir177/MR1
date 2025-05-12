@@ -1,0 +1,283 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À Propos",
+    "courses": "Nos Formations",
+    "events": "Événements",
+    "team": "Notre Équipe",
+    "contact": "Contact",
+    "login": "Connexion",
+    "register": "Inscription",
+    "language": "Langue",
+    "careers": "Carrières"
+  },
+  "hero": {
+    "title": "MIRA ACADEMY",
+    "subtitle": "Excellence en Formation Professionnelle",
+    "cta": "Découvrir Nos Formations",
+    "secondaryCta": "Contactez-Nous"
+  },
+  "features": {
+    "title": "Pourquoi Choisir MIRA ACADEMY",
+    "subtitle": "Découvrez ce qui nous rend uniques en formation professionnelle",
+    "features": {
+      "quality": {
+        "title": "Formation de Qualité",
+        "description": "Programmes conçus par des experts pour assurer l'excellence en éducation"
+      },
+      "experts": {
+        "title": "Experts du Secteur",
+        "description": "Apprenez avec des professionnels expérimentés et passionnés"
+      },
+      "practical": {
+        "title": "Approche Pratique",
+        "description": "Appliquez vos connaissances avec des projets réels"
+      },
+      "certification": {
+        "title": "Certification Reconnue",
+        "description": "Obtenez des certifications valorisées par les employeurs"
+      }
+    }
+  },
+  "stats": {
+    "students": "Étudiants formés",
+    "courses": "Formations disponibles",
+    "instructors": "Instructeurs experts",
+    "satisfaction": "Taux de satisfaction"
+  },
+  "about": {
+    "title": "À Propos de MIRA ACADEMY",
+    "description": "MIRA ACADEMY est un centre de formation professionnelle situé en Algérie, offrant des programmes de haute qualité pour préparer nos étudiants aux carrières futures. Notre objectif est de fournir une éducation pratique et théorique de première classe.",
+    "mission": "Notre Mission",
+    "missionText": "Former des professionnels compétents prêts pour le marché du travail en offrant une formation pratique et théorique de qualité.",
+    "vision": "Notre Vision",
+    "visionText": "Devenir le leader de la formation professionnelle en Algérie en proposant des programmes innovants qui répondent aux besoins évolutifs du marché."
+  },
+  "courses": {
+    "title": "Nos Formations",
+    "viewAll": "Voir Toutes les Formations",
+    "enrollNow": "S'inscrire Maintenant",
+    "learnMore": "En Savoir Plus",
+    "duration": "Durée",
+    "level": "Niveau",
+    "language": "Langue",
+    "price": "Prix",
+    "webDev": "Développement Web",
+    "graphicDesign": "Design Graphique",
+    "digitalMarketing": "Marketing Digital",
+    "businessManagement": "Gestion d'Entreprise"
+  },
+  "careers": {
+    "title": "Rejoignez Notre Équipe",
+    "subtitle": "Découvrez les opportunités de carrière chez MIRA ACADEMY",
+    "whyJoinUs": {
+      "title": "Pourquoi Nous Rejoindre",
+      "description": "MIRA ACADEMY offre un environnement de travail stimulant et dynamique où vous pourrez développer vos compétences et faire progresser votre carrière.",
+      "benefits": {
+        "professional": {
+          "title": "Développement Professionnel",
+          "description": "Nous investissons dans votre croissance professionnelle avec des opportunités de formation continue et de perfectionnement des compétences."
+        },
+        "collaborative": {
+          "title": "Environnement Collaboratif",
+          "description": "Rejoignez une équipe dynamique et collaborative qui valorise l'innovation et les idées nouvelles."
+        },
+        "competitive": {
+          "title": "Rémunération Compétitive",
+          "description": "Nous offrons des salaires compétitifs et des avantages sociaux pour valoriser votre expertise et vos contributions."
+        }
+      }
+    },
+    "openings": {
+      "title": "Postes Ouverts",
+      "description": "Explorez nos opportunités d'emploi actuelles et rejoignez notre équipe de professionnels dévoués.",
+      "applyButton": "Postuler Maintenant"
+    },
+    "process": {
+      "title": "Processus de Candidature",
+      "description": "Notre processus de recrutement est conçu pour être transparent et efficace. Voici à quoi vous pouvez vous attendre:",
+      "steps": {
+        "application": {
+          "title": "Candidature",
+          "description": "Soumettez votre CV et votre lettre de motivation en ligne."
+        },
+        "screening": {
+          "title": "Présélection",
+          "description": "Notre équipe RH examinera votre candidature et vous contactera pour un entretien téléphonique initial."
+        },
+        "interview": {
+          "title": "Entretien",
+          "description": "Les candidats présélectionnés seront invités à un entretien en personne ou virtuel avec l'équipe concernée."
+        },
+        "offer": {
+          "title": "Offre",
+          "description": "Les candidats retenus recevront une offre d'emploi détaillant les conditions et les avantages."
+        }
+      }
+    },
+    "cta": {
+      "title": "Prêt à Postuler?",
+      "description": "Rejoignez notre équipe dynamique et contribuez à former la prochaine génération de professionnels.",
+      "button": "Nous Contacter"
+    }
+  },
+  "testimonials": {
+    "title": "Ce Que Disent Nos Étudiants",
+    "subtitle": "Découvrez les témoignages de nos anciens étudiants sur leur expérience à MIRA ACADEMY"
+  },
+  "partners": {
+    "section": "Accréditations",
+    "title": "Nos Partenaires de Confiance",
+    "description": "Fièrement accrédité par des organisations éducatives de premier plan pour garantir une formation de qualité et reconnue.",
+    "certifications": {
+      "recognition": {
+        "title": "Certification Reconnue",
+        "description": "Nos certifications sont reconnues dans tout le pays et par de nombreuses entreprises internationales."
+      },
+      "quality": {
+        "title": "Standards de Qualité",
+        "description": "Nous maintenons les plus hauts standards de qualité dans nos programmes et méthodologies d'enseignement."
+      },
+      "international": {
+        "title": "Reconnaissance Internationale",
+        "description": "Nos diplômes sont reconnus internationalement, ouvrant des portes vers des opportunités mondiales."
+      }
+    }
+  },
+  "cta": {
+    "title": "Prêt à commencer votre parcours éducatif?",
+    "description": "Inscrivez-vous aujourd'hui et bénéficiez de 15% de réduction sur votre premier cours.",
+    "register": "S'inscrire Maintenant",
+    "contact": "Nous Contacter"
+  },
+  "newsletter": {
+    "title": "Abonnez-vous à Notre Newsletter",
+    "subtitle": "Recevez les dernières nouvelles, mises à jour des cours et offres spéciales directement dans votre boîte de réception.",
+    "placeholder": "Entrez votre adresse e-mail",
+    "buttonText": "S'abonner",
+    "successMessage": "Merci de vous être abonné ! Nous vous tiendrons informé de nos dernières actualités et offres.",
+    "errorMessage": "Une erreur s'est produite lors de l'abonnement. Veuillez réessayer plus tard."
+  },
+  "footer": {
+    "about": "Centre de formation professionnelle d'excellence offrant des programmes innovants pour préparer nos étudiants aux carrières futures.",
+    "quickLinks": "Liens Rapides",
+    "courses": "Formations",
+    "contact": "Contact",
+    "follow": "Suivez-Nous",
+    "address": "123 Rue Principale, Alger, Algérie",
+    "phone": "+213 12 345 6789",
+    "email": "contact@mira-academy.dz",
+    "copyright": "© 2023 MIRA ACADEMY. Tous droits réservés.",
+    "privacy": "Politique de Confidentialité",
+    "terms": "Conditions d'Utilisation"
+  },
+  "faq": {
+    "title": "Questions Fréquemment Posées",
+    "subtitle": "Trouvez des réponses aux questions les plus courantes sur nos programmes et services",
+    "questions": [
+      {
+        "question": "Comment puis-je m'inscrire à un cours ?",
+        "answer": "Vous pouvez vous inscrire à un cours en créant un compte sur notre site web, en parcourant les cours disponibles et en suivant le processus d'inscription. Vous pouvez également vous rendre en personne à notre centre pour vous inscrire."
+      },
+      {
+        "question": "Quels modes de paiement acceptez-vous ?",
+        "answer": "Nous acceptons divers modes de paiement, notamment les cartes de crédit/débit, les virements bancaires et les paiements en espèces à notre centre. Nous proposons également des plans de paiement échelonné pour certains cours."
+      },
+      {
+        "question": "Vos certifications sont-elles reconnues internationalement ?",
+        "answer": "Oui, nos certifications sont reconnues par diverses organisations et entreprises internationales. Nos partenariats avec des entreprises technologiques mondiales garantissent que notre formation répond aux normes de l'industrie."
+      },
+      {
+        "question": "Proposez-vous des cours en ligne ?",
+        "answer": "Oui, nous proposons des cours en présentiel et en ligne. Notre plateforme en ligne offre des expériences d'apprentissage interactives avec le soutien d'instructeurs en direct et des exercices pratiques."
+      },
+      {
+        "question": "Puis-je annuler mon inscription ?",
+        "answer": "Oui, vous pouvez annuler votre inscription jusqu'à 7 jours avant le début du cours pour un remboursement complet. Les annulations effectuées moins de 7 jours avant la date de début peuvent être soumises à des frais d'annulation."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Derniers Articles & Perspectives",
+    "subtitle": "Restez à jour avec les dernières tendances, conseils et perspectives en technologie et formation professionnelle",
+    "viewAll": "Voir Tous les Articles",
+    "readMore": "Lire la suite"
+  },
+  "contactPage": {
+    "title": "Contactez-Nous",
+    "subtitle": "Entrez en contact avec notre équipe pour toute question, retour d'information ou demande",
+    "form": {
+      "name": "Votre Nom",
+      "email": "Votre Email",
+      "phone": "Numéro de Téléphone",
+      "subject": "Sujet",
+      "message": "Votre Message",
+      "submit": "Envoyer le Message"
+    },
+    "contact": {
+      "title": "Informations de Contact",
+      "address": "123 Rue Principale, Alger, Algérie",
+      "phone": "+213 12 345 6789",
+      "email": "contact@mira-academy.dz"
+    },
+    "success": "Merci de nous avoir contactés ! Nous avons reçu votre message et vous répondrons dans les plus brefs délais.",
+    "error": "Une erreur s'est produite lors de l'envoi de votre message. Veuillez réessayer."
+  },
+  "courseDetails": {
+    "enrollNow": "S'inscrire Maintenant",
+    "learnMore": "En Savoir Plus",
+    "duration": "Durée",
+    "level": "Niveau",
+    "language": "Langue",
+    "price": "Prix",
+    "overview": "Aperçu",
+    "whatLearn": "Ce Que Vous Apprendrez",
+    "content": "Contenu du Cours",
+    "instructor": "Formateur",
+    "reviews": "Avis"
+  },
+  "gallery": {
+    "title": "Campus et Installations",
+    "subtitle": "Faites une visite virtuelle de notre campus moderne, nos salles de classe et nos installations",
+    "categories": {
+      "all": "Tous",
+      "campus": "Campus",
+      "classrooms": "Salles de classe",
+      "events": "Événements",
+      "students": "Étudiants"
+    }
+  },
+  "events": {
+    "title": "Événements à Venir",
+    "subtitle": "Restez informé des derniers événements, ateliers et cours à MIRA Academy",
+    "noEvents": "Aucun événement prévu pour cette date",
+    "viewAll": "Événements à Venir",
+    "registerNow": "S'inscrire Maintenant",
+    "today": "Aujourd'hui",
+    "location": "Lieu",
+    "time": "Horaire",
+    "filterEvents": "Filtrer les Événements",
+    "categories": {
+      "all": "Tous les Événements",
+      "course": "Cours",
+      "workshop": "Ateliers",
+      "seminar": "Séminaires",
+      "campus": "Événements de Campus"
+    },
+    "months": ["Janvier", "Février", "Mars", "Avril", "Mai", "Juin", "Juillet", "Août", "Septembre", "Octobre", "Novembre", "Décembre"],
+    "days": ["Dim", "Lun", "Mar", "Mer", "Jeu", "Ven", "Sam"]
+  },
+  "team": {
+    "title": "Notre Équipe",
+    "subtitle": "Rencontrez les professionnels dévoués derrière le succès de MIRA Academy",
+    "categories": {
+      "all": "Tous",
+      "faculty": "Corps Enseignant",
+      "staff": "Personnel",
+      "administration": "Administration"
+    },
+    "viewProfile": "Voir le Profil",
+    "contactMember": "Contacter ce Membre",
+    "closeProfile": "Fermer le profil"
+  }
+} 

@@ -1,0 +1,3 @@
+Fix the following routes to use consistent parameter names:
+
+1. app\[locale]\courses\[id] should be renamed to match app\[locale]\courses\[courseId]

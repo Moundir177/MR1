@@ -1,0 +1,283 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "courses": "Our Courses",
+    "events": "Events",
+    "team": "Our Team",
+    "contact": "Contact",
+    "login": "Login",
+    "register": "Register",
+    "language": "Language",
+    "careers": "Careers"
+  },
+  "hero": {
+    "title": "MIRA ACADEMY",
+    "subtitle": "Excellence in Professional Training",
+    "cta": "Discover Our Courses",
+    "secondaryCta": "Contact Us"
+  },
+  "features": {
+    "title": "Why Choose MIRA ACADEMY",
+    "subtitle": "Discover what makes us unique in professional training",
+    "features": {
+      "quality": {
+        "title": "Quality Training",
+        "description": "Programs designed by experts to ensure excellence in education"
+      },
+      "experts": {
+        "title": "Industry Experts",
+        "description": "Learn from experienced and passionate professionals"
+      },
+      "practical": {
+        "title": "Practical Approach",
+        "description": "Apply your knowledge with real-world projects"
+      },
+      "certification": {
+        "title": "Recognized Certification",
+        "description": "Earn certifications valued by employers"
+      }
+    }
+  },
+  "stats": {
+    "students": "Students trained",
+    "courses": "Available courses",
+    "instructors": "Expert instructors",
+    "satisfaction": "Satisfaction rate"
+  },
+  "about": {
+    "title": "About MIRA ACADEMY",
+    "description": "MIRA ACADEMY is a professional training center located in Algeria, offering high-quality programs to prepare our students for future careers. Our goal is to provide first-class practical and theoretical education.",
+    "mission": "Our Mission",
+    "missionText": "To train competent professionals ready for the job market by offering quality practical and theoretical training.",
+    "vision": "Our Vision",
+    "visionText": "To become the leader in professional training in Algeria by offering innovative programs that meet the evolving needs of the market."
+  },
+  "courses": {
+    "title": "Our Courses",
+    "viewAll": "View All Courses",
+    "enrollNow": "Enroll Now",
+    "learnMore": "Learn More",
+    "duration": "Duration",
+    "level": "Level",
+    "language": "Language",
+    "price": "Price",
+    "webDev": "Web Development",
+    "graphicDesign": "Graphic Design",
+    "digitalMarketing": "Digital Marketing",
+    "businessManagement": "Business Management"
+  },
+  "careers": {
+    "title": "Join Our Team",
+    "subtitle": "Discover career opportunities at MIRA ACADEMY",
+    "whyJoinUs": {
+      "title": "Why Join Us",
+      "description": "MIRA ACADEMY offers a stimulating and dynamic work environment where you can develop your skills and advance your career.",
+      "benefits": {
+        "professional": {
+          "title": "Professional Development",
+          "description": "We invest in your professional growth with ongoing training opportunities and skill development."
+        },
+        "collaborative": {
+          "title": "Collaborative Environment",
+          "description": "Join a dynamic and collaborative team that values innovation and fresh ideas."
+        },
+        "competitive": {
+          "title": "Competitive Compensation",
+          "description": "We offer competitive salaries and benefits to value your expertise and contributions."
+        }
+      }
+    },
+    "openings": {
+      "title": "Current Openings",
+      "description": "Explore our current job opportunities and join our team of dedicated professionals.",
+      "applyButton": "Apply Now"
+    },
+    "process": {
+      "title": "Application Process",
+      "description": "Our recruitment process is designed to be transparent and efficient. Here's what you can expect:",
+      "steps": {
+        "application": {
+          "title": "Application",
+          "description": "Submit your CV and cover letter online."
+        },
+        "screening": {
+          "title": "Screening",
+          "description": "Our HR team will review your application and contact you for an initial phone interview."
+        },
+        "interview": {
+          "title": "Interview",
+          "description": "Shortlisted candidates will be invited for an in-person or virtual interview with the relevant team."
+        },
+        "offer": {
+          "title": "Offer",
+          "description": "Successful candidates will receive a job offer detailing the terms and benefits."
+        }
+      }
+    },
+    "cta": {
+      "title": "Ready to Apply?",
+      "description": "Join our dynamic team and help shape the next generation of professionals.",
+      "button": "Contact Us"
+    }
+  },
+  "testimonials": {
+    "title": "What Our Students Say",
+    "subtitle": "Hear from our alumni about their learning experience at MIRA ACADEMY"
+  },
+  "partners": {
+    "section": "Accreditations",
+    "title": "Our Trusted Partners",
+    "description": "Proudly accredited by top educational organizations to ensure quality and recognized training.",
+    "certifications": {
+      "recognition": {
+        "title": "Recognized Certification",
+        "description": "Our certifications are recognized throughout the country and by many international companies."
+      },
+      "quality": {
+        "title": "Quality Standards",
+        "description": "We maintain the highest quality standards in our programs and teaching methodologies."
+      },
+      "international": {
+        "title": "International Recognition",
+        "description": "Our diplomas are internationally recognized, opening doors to global opportunities."
+      }
+    }
+  },
+  "cta": {
+    "title": "Ready to start your educational journey?",
+    "description": "Register today and get 15% off your first course.",
+    "register": "Register Now",
+    "contact": "Contact Us"
+  },
+  "newsletter": {
+    "title": "Subscribe to Our Newsletter",
+    "subtitle": "Get the latest news, course updates and special offers directly to your inbox.",
+    "placeholder": "Enter your email address",
+    "buttonText": "Subscribe",
+    "successMessage": "Thanks for subscribing! We'll keep you updated with our latest news and offers.",
+    "errorMessage": "An error occurred while subscribing. Please try again later."
+  },
+  "footer": {
+    "about": "Professional training center of excellence offering innovative programs to prepare our students for future careers.",
+    "quickLinks": "Quick Links",
+    "courses": "Courses",
+    "contact": "Contact",
+    "follow": "Follow Us",
+    "address": "123 Main Street, Algiers, Algeria",
+    "phone": "+213 12 345 6789",
+    "email": "contact@mira-academy.dz",
+    "copyright": "© 2023 MIRA ACADEMY. All rights reserved.",
+    "privacy": "Privacy Policy",
+    "terms": "Terms of Use"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Find answers to the most common questions about our programs and services",
+    "questions": [
+      {
+        "question": "How do I register for a course?",
+        "answer": "You can register for a course by creating an account on our website, browsing the available courses, and following the enrollment process. You can also visit our center in person to register."
+      },
+      {
+        "question": "What payment methods do you accept?",
+        "answer": "We accept various payment methods including credit/debit cards, bank transfers, and cash payments at our center. We also offer installment payment plans for certain courses."
+      },
+      {
+        "question": "Are your certifications recognized internationally?",
+        "answer": "Yes, our certifications are recognized by various international organizations and companies. Our partnerships with global tech companies ensure that our training meets industry standards."
+      },
+      {
+        "question": "Do you offer online courses?",
+        "answer": "Yes, we offer both in-person and online courses. Our online platform provides interactive learning experiences with live instructor support and practical exercises."
+      },
+      {
+        "question": "Can I cancel my registration?",
+        "answer": "Yes, you can cancel your registration up to 7 days before the course starts for a full refund. Cancellations made less than 7 days before the start date may be subject to a cancellation fee."
+      }
+    ]
+  },
+  "blog": {
+    "title": "Latest Articles & Insights",
+    "subtitle": "Stay up to date with the latest trends, tips, and insights in technology and professional training",
+    "viewAll": "View All Articles",
+    "readMore": "Read more"
+  },
+  "contactPage": {
+    "title": "Contact Us",
+    "subtitle": "Get in touch with our team for any questions, feedback, or inquiries",
+    "form": {
+      "name": "Your Name",
+      "email": "Your Email",
+      "phone": "Phone Number",
+      "subject": "Subject",
+      "message": "Your Message",
+      "submit": "Send Message"
+    },
+    "contact": {
+      "title": "Contact Information",
+      "address": "123 Main Street, Algiers, Algeria",
+      "phone": "+213 12 345 6789",
+      "email": "contact@mira-academy.dz"
+    },
+    "success": "Thank you for contacting us! We've received your message and will get back to you as soon as possible.",
+    "error": "There was an error sending your message. Please try again."
+  },
+  "courseDetails": {
+    "enrollNow": "Enroll Now",
+    "learnMore": "Learn More",
+    "duration": "Duration",
+    "level": "Level",
+    "language": "Language",
+    "price": "Price",
+    "overview": "Overview",
+    "whatLearn": "What You Will Learn",
+    "content": "Course Content",
+    "instructor": "Instructor",
+    "reviews": "Reviews"
+  },
+  "gallery": {
+    "title": "Campus & Facilities",
+    "subtitle": "Take a virtual tour of our modern campus, classrooms, and facilities",
+    "categories": {
+      "all": "All",
+      "campus": "Campus",
+      "classrooms": "Classrooms",
+      "events": "Events",
+      "students": "Students"
+    }
+  },
+  "events": {
+    "title": "Upcoming Events",
+    "subtitle": "Stay updated with the latest events, workshops, and courses at MIRA Academy",
+    "noEvents": "No events scheduled for this date",
+    "viewAll": "Upcoming Events",
+    "registerNow": "Register Now",
+    "today": "Today",
+    "location": "Location",
+    "time": "Time",
+    "filterEvents": "Filter Events",
+    "categories": {
+      "all": "All Events",
+      "course": "Courses",
+      "workshop": "Workshops",
+      "seminar": "Seminars",
+      "campus": "Campus Events"
+    },
+    "months": ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"],
+    "days": ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"]
+  },
+  "team": {
+    "title": "Our Team",
+    "subtitle": "Meet the dedicated professionals behind MIRA Academy's success",
+    "categories": {
+      "all": "All",
+      "faculty": "Faculty",
+      "staff": "Staff",
+      "administration": "Administration"
+    },
+    "viewProfile": "View Profile",
+    "contactMember": "Contact this Member",
+    "closeProfile": "Close profile"
+  }
+} 
