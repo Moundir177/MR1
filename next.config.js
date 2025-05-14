@@ -4,6 +4,7 @@ const nextConfig = {
     domains: ['images.pexels.com'],
   },
   output: 'standalone',
+  trailingSlash: true,
 }
 
 module.exports = nextConfig 
