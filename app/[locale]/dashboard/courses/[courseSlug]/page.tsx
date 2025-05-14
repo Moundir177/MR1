@@ -671,4 +671,18 @@ export default async function CourseLearningPage({ params: { locale, courseSlug 
       <Footer locale={locale} translations={translations.footer} />
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return [
+    { locale: 'en', courseSlug: 'web-development' },
+    { locale: 'en', courseSlug: 'graphic-design' },
+    { locale: 'en', courseSlug: 'digital-marketing' },
+    { locale: 'fr', courseSlug: 'web-development' },
+    { locale: 'fr', courseSlug: 'graphic-design' },
+    { locale: 'fr', courseSlug: 'digital-marketing' },
+    { locale: 'ar', courseSlug: 'web-development' },
+    { locale: 'ar', courseSlug: 'graphic-design' },
+    { locale: 'ar', courseSlug: 'digital-marketing' }
+  ];
 } 

@@ -422,4 +422,18 @@ export default async function BlogPostPage({ params: { locale, slug } }: BlogPos
       <Footer locale={locale} translations={translations.footer} />
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return [
+    { locale: 'en', slug: 'getting-started-with-web-development' },
+    { locale: 'en', slug: 'design-principles-for-beginners' },
+    { locale: 'en', slug: 'digital-marketing-trends' },
+    { locale: 'fr', slug: 'getting-started-with-web-development' },
+    { locale: 'fr', slug: 'design-principles-for-beginners' },
+    { locale: 'fr', slug: 'digital-marketing-trends' },
+    { locale: 'ar', slug: 'getting-started-with-web-development' },
+    { locale: 'ar', slug: 'design-principles-for-beginners' },
+    { locale: 'ar', slug: 'digital-marketing-trends' }
+  ];
 } 

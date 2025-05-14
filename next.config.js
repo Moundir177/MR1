@@ -2,8 +2,9 @@
 const nextConfig = {
   images: {
     domains: ['images.pexels.com'],
+    unoptimized: true,
   },
-  output: 'standalone',
+  output: 'export',
   trailingSlash: true,
 }
 

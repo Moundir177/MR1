@@ -600,4 +600,18 @@ export default async function JobPage({ params: { locale, id } }: JobPageProps) 
       <Footer locale={locale} translations={translations.footer} />
     </main>
   );
+}
+
+export function generateStaticParams() {
+  return [
+    { locale: 'en', id: 'web-development-instructor' },
+    { locale: 'en', id: 'graphic-design-instructor' },
+    { locale: 'en', id: 'digital-marketing-specialist' },
+    { locale: 'fr', id: 'web-development-instructor' },
+    { locale: 'fr', id: 'graphic-design-instructor' },
+    { locale: 'fr', id: 'digital-marketing-specialist' },
+    { locale: 'ar', id: 'web-development-instructor' },
+    { locale: 'ar', id: 'graphic-design-instructor' },
+    { locale: 'ar', id: 'digital-marketing-specialist' }
+  ];
 } 
