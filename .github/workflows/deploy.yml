@@ -10,7 +10,17 @@ jobs:
     runs-on: ubuntu-latest
     name: Deploy
     steps:
-      - uses: actions/checkout@v3
+      - name: Checkout repository
+        uses: actions/checkout@v3
+        with:
+          submodules: false
+      
+      - name: Remove problematic submodule references
+        run: |
+          if [ -d "mira-academy" ]; then
+            rm -rf mira-academy
+          fi
+          git config --global --add safe.directory "*"
       
       - name: Setup Node.js
         uses: actions/setup-node@v3
