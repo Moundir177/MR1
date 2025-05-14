@@ -1,8 +1,9 @@
 {
+  "always_use_https": true,
   "redirects": [
     {
       "source": "/",
-      "destination": "/en"
+      "destination": "/fr"
     }
   ],
   "rewrites": [

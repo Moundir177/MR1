@@ -8,7 +8,7 @@
   "routes": [
     {
       "src": "/",
-      "dest": "/en/index.html"
+      "dest": "/fr/index.html"
     },
     {
       "src": "/en",
@@ -21,6 +21,210 @@
     {
       "src": "/ar",
       "dest": "/ar/index.html"
+    },
+    {
+      "src": "/fr/courses",
+      "dest": "/fr/courses/index.html"
+    },
+    {
+      "src": "/en/courses",
+      "dest": "/en/courses/index.html"
+    },
+    {
+      "src": "/ar/courses",
+      "dest": "/ar/courses/index.html"
+    },
+    {
+      "src": "/fr/courses/web-development",
+      "dest": "/fr/courses/web-development/index.html"
+    },
+    {
+      "src": "/en/courses/web-development",
+      "dest": "/en/courses/web-development/index.html"
+    },
+    {
+      "src": "/ar/courses/web-development",
+      "dest": "/ar/courses/web-development/index.html"
+    },
+    {
+      "src": "/fr/courses/digital-marketing",
+      "dest": "/fr/courses/digital-marketing/index.html"
+    },
+    {
+      "src": "/en/courses/digital-marketing",
+      "dest": "/en/courses/digital-marketing/index.html"
+    },
+    {
+      "src": "/ar/courses/digital-marketing",
+      "dest": "/ar/courses/digital-marketing/index.html"
+    },
+    {
+      "src": "/fr/courses/graphic-design",
+      "dest": "/fr/courses/graphic-design/index.html"
+    },
+    {
+      "src": "/en/courses/graphic-design",
+      "dest": "/en/courses/graphic-design/index.html"
+    },
+    {
+      "src": "/ar/courses/graphic-design",
+      "dest": "/ar/courses/graphic-design/index.html"
+    },
+    {
+      "src": "/fr/about",
+      "dest": "/fr/about/index.html"
+    },
+    {
+      "src": "/en/about",
+      "dest": "/en/about/index.html"
+    },
+    {
+      "src": "/ar/about",
+      "dest": "/ar/about/index.html"
+    },
+    {
+      "src": "/fr/contact",
+      "dest": "/fr/contact/index.html"
+    },
+    {
+      "src": "/en/contact",
+      "dest": "/en/contact/index.html"
+    },
+    {
+      "src": "/ar/contact",
+      "dest": "/ar/contact/index.html"
+    },
+    {
+      "src": "/fr/blog",
+      "dest": "/fr/blog/index.html"
+    },
+    {
+      "src": "/en/blog",
+      "dest": "/en/blog/index.html"
+    },
+    {
+      "src": "/ar/blog",
+      "dest": "/ar/blog/index.html"
+    },
+    {
+      "src": "/fr/login",
+      "dest": "/fr/login/index.html"
+    },
+    {
+      "src": "/en/login",
+      "dest": "/en/login/index.html"
+    },
+    {
+      "src": "/ar/login",
+      "dest": "/ar/login/index.html"
+    },
+    {
+      "src": "/fr/register",
+      "dest": "/fr/register/index.html"
+    },
+    {
+      "src": "/en/register",
+      "dest": "/en/register/index.html"
+    },
+    {
+      "src": "/ar/register",
+      "dest": "/ar/register/index.html"
+    },
+    {
+      "src": "/fr/dashboard",
+      "dest": "/fr/dashboard/index.html"
+    },
+    {
+      "src": "/en/dashboard",
+      "dest": "/en/dashboard/index.html"
+    },
+    {
+      "src": "/ar/dashboard",
+      "dest": "/ar/dashboard/index.html"
+    },
+    {
+      "src": "/fr/student-dashboard",
+      "dest": "/fr/student-dashboard/index.html"
+    },
+    {
+      "src": "/en/student-dashboard",
+      "dest": "/en/student-dashboard/index.html"
+    },
+    {
+      "src": "/ar/student-dashboard",
+      "dest": "/ar/student-dashboard/index.html"
+    },
+    {
+      "src": "/fr/events",
+      "dest": "/fr/events/index.html"
+    },
+    {
+      "src": "/en/events",
+      "dest": "/en/events/index.html"
+    },
+    {
+      "src": "/ar/events",
+      "dest": "/ar/events/index.html"
+    },
+    {
+      "src": "/fr/gallery",
+      "dest": "/fr/gallery/index.html"
+    },
+    {
+      "src": "/en/gallery",
+      "dest": "/en/gallery/index.html"
+    },
+    {
+      "src": "/ar/gallery",
+      "dest": "/ar/gallery/index.html"
+    },
+    {
+      "src": "/fr/team",
+      "dest": "/fr/team/index.html"
+    },
+    {
+      "src": "/en/team",
+      "dest": "/en/team/index.html"
+    },
+    {
+      "src": "/ar/team",
+      "dest": "/ar/team/index.html"
+    },
+    {
+      "src": "/fr/faq",
+      "dest": "/fr/faq/index.html"
+    },
+    {
+      "src": "/en/faq",
+      "dest": "/en/faq/index.html"
+    },
+    {
+      "src": "/ar/faq",
+      "dest": "/ar/faq/index.html"
+    },
+    {
+      "src": "/fr/testimonials",
+      "dest": "/fr/testimonials/index.html"
+    },
+    {
+      "src": "/en/testimonials",
+      "dest": "/en/testimonials/index.html"
+    },
+    {
+      "src": "/ar/testimonials",
+      "dest": "/ar/testimonials/index.html"
+    },
+    {
+      "src": "/fr/careers",
+      "dest": "/fr/careers/index.html"
+    },
+    {
+      "src": "/en/careers",
+      "dest": "/en/careers/index.html"
+    },
+    {
+      "src": "/ar/careers",
+      "dest": "/ar/careers/index.html"
     }
   ]
 } 

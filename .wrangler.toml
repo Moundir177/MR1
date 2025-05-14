@@ -1,12 +1,8 @@
 [build]
 command = "npm run build"
-upload.format = "directory"
-
-[env.production]
-route = "miracademy.pages.dev/*"
 
 [site]
-bucket = ".next"
+bucket = "out"
 
-[build.upload]
-format = "service-worker" 
+[env.production]
+route = "miracademy.pages.dev/*" 

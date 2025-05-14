@@ -72,14 +72,32 @@ npm run build
 yarn build
 ```
 
-## Deployment
+## Deployment to Cloudflare Pages
 
-The project can be deployed on any hosting platform that supports Node.js applications:
+### Manual Deployment
+1. Build the project
+```
+npm run build
+```
 
-- Vercel (recommended for Next.js)
-- Netlify
-- AWS Amplify
-- Digital Ocean App Platform
+2. Deploy using Wrangler CLI
+```
+npx wrangler pages deploy out --project-name=miracademy
+```
+
+### GitHub Actions Deployment
+1. Set up the following secrets in your GitHub repository:
+   - `CLOUDFLARE_API_TOKEN`: Your Cloudflare API token
+   - `CLOUDFLARE_ACCOUNT_ID`: Your Cloudflare account ID
+
+2. The workflow will automatically deploy on push to the main branch.
+
+### Cloudflare Deployment Troubleshooting
+If deployment gets stuck in "In Progress" state:
+1. Make sure your Cloudflare API token has the correct permissions (Cloudflare Pages: Edit)
+2. Check that the build is successful locally
+3. Try clearing the Cloudflare Pages cache or redeploy manually
+4. Ensure your project configuration matches Cloudflare requirements
 
 ## License
 
