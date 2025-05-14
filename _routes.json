@@ -3,7 +3,24 @@
   "include": ["/*"],
   "exclude": [
     "/_next/*",
-    "/api/*",
-    "/_next/static/*"
+    "/api/*"
+  ],
+  "routes": [
+    {
+      "src": "/",
+      "dest": "/en/index.html"
+    },
+    {
+      "src": "/en",
+      "dest": "/en/index.html"
+    },
+    {
+      "src": "/fr",
+      "dest": "/fr/index.html"
+    },
+    {
+      "src": "/ar",
+      "dest": "/ar/index.html"
+    }
   ]
 } 
