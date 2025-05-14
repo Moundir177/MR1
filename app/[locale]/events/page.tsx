@@ -4,7 +4,6 @@ import Footer from '../../components/Footer';
 import EventsCalendar from '../../components/EventsCalendar';
 import fs from 'fs';
 import path from 'path';
-import { motion } from 'framer-motion';
 
 interface EventsPageProps {
   params: {
@@ -50,22 +49,12 @@ export default async function EventsPage({ params: { locale } }: EventsPageProps
         <section className="py-20 bg-primary text-white">
           <div className="container-custom">
             <div className="text-center mb-4">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-3xl md:text-4xl font-bold mb-4"
-              >
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">
                 {translations.events.title}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-xl max-w-2xl mx-auto"
-              >
+              </h1>
+              <p className="text-xl max-w-2xl mx-auto">
                 {translations.events.subtitle}
-              </motion.p>
+              </p>
             </div>
           </div>
         </section>

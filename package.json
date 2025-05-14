@@ -10,7 +10,7 @@
   },
   "dependencies": {
     "@formatjs/intl-localematcher": "^0.4.2",
-    "framer-motion": "^10.16.4",
+    "framer-motion": "^12.11.1",
     "negotiator": "^0.6.3",
     "next": "13.5.6",
     "next-intl": "^3.5.4",
@@ -30,4 +30,4 @@
     "tailwindcss": "^3.4.0",
     "typescript": "^5.3.3"
   }
-} 
+}

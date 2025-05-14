@@ -3,7 +3,6 @@ import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
 import fs from 'fs';
 import path from 'path';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { FaCalendarAlt, FaUser, FaTags, FaSearch } from 'react-icons/fa';
 
@@ -203,26 +202,16 @@ export default async function BlogPage({ params: { locale } }: BlogPageProps) {
         <section className="py-20 bg-primary text-white">
           <div className="container-custom">
             <div className="text-center mb-4">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-3xl md:text-4xl font-bold mb-4"
-              >
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">
                 {locale === 'fr' ? 'Blog' : locale === 'ar' ? 'المدونة' : 'Blog'}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-xl max-w-2xl mx-auto"
-              >
+              </h1>
+              <p className="text-xl max-w-2xl mx-auto">
                 {locale === 'fr' 
                   ? "Explorez nos ressources et articles sur le développement web, le design, le marketing et la technologie."
                   : locale === 'ar'
                   ? "استكشف مواردنا ومقالاتنا حول تطوير الويب والتصميم والتسويق والتكنولوجيا."
                   : "Explore our resources and articles about web development, design, marketing, and technology."}
-              </motion.p>
+              </p>
             </div>
           </div>
         </section>
@@ -235,12 +224,8 @@ export default async function BlogPage({ params: { locale } }: BlogPageProps) {
               <div className="lg:col-span-2">
                 <div className="space-y-10">
                   {blogPosts.map((post, index) => (
-                    <motion.article
+                    <article
                       key={post.id}
-                      initial={{ opacity: 0, y: 30 }}
-                      whileInView={{ opacity: 1, y: 0 }}
-                      viewport={{ once: true }}
-                      transition={{ duration: 0.5, delay: index * 0.1 }}
                       className="bg-white rounded-xl overflow-hidden shadow-md border border-gray-100 hover:shadow-lg transition-all"
                     >
                       <div className="relative h-64 overflow-hidden">
@@ -290,12 +275,12 @@ export default async function BlogPage({ params: { locale } }: BlogPageProps) {
                           </svg>
                         </Link>
                       </div>
-                    </motion.article>
+                    </article>
                   ))}
                 </div>
                 
                 {/* Pagination */}
-                <div className="flex justify-center mt-12">
+                <div className="mt-12 flex justify-center">
                   <nav className="flex items-center space-x-2">
                     <a 
                       href="#" 
@@ -320,13 +305,7 @@ export default async function BlogPage({ params: { locale } }: BlogPageProps) {
               <div className="lg:col-span-1">
                 <div className="space-y-8">
                   {/* Search Box */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="bg-white rounded-xl p-6 shadow-md border border-gray-100"
-                  >
+                  <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
                     <h3 className="text-xl font-bold text-neutral-dark mb-4">
                       {locale === 'fr' ? 'Rechercher' : locale === 'ar' ? 'بحث' : 'Search'}
                     </h3>
@@ -338,16 +317,10 @@ export default async function BlogPage({ params: { locale } }: BlogPageProps) {
                       />
                       <FaSearch className="absolute top-3.5 right-3 text-neutral" />
                     </div>
-                  </motion.div>
+                  </div>
                   
                   {/* Categories */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.1 }}
-                    className="bg-white rounded-xl p-6 shadow-md border border-gray-100"
-                  >
+                  <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
                     <h3 className="text-xl font-bold text-neutral-dark mb-4">
                       {locale === 'fr' ? 'Catégories' : locale === 'ar' ? 'الفئات' : 'Categories'}
                     </h3>
@@ -366,16 +339,10 @@ export default async function BlogPage({ params: { locale } }: BlogPageProps) {
                         </li>
                       ))}
                     </ul>
-                  </motion.div>
+                  </div>
                   
                   {/* Recent Posts */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.2 }}
-                    className="bg-white rounded-xl p-6 shadow-md border border-gray-100"
-                  >
+                  <div className="bg-white rounded-xl p-6 shadow-md border border-gray-100">
                     <h3 className="text-xl font-bold text-neutral-dark mb-4">
                       {locale === 'fr' ? 'Articles Récents' : locale === 'ar' ? 'مقالات حديثة' : 'Recent Posts'}
                     </h3>
@@ -400,16 +367,10 @@ export default async function BlogPage({ params: { locale } }: BlogPageProps) {
                         </div>
                       ))}
                     </div>
-                  </motion.div>
+                  </div>
                   
                   {/* Subscribe Box */}
-                  <motion.div
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5, delay: 0.3 }}
-                    className="bg-primary rounded-xl p-6 text-white"
-                  >
+                  <div className="bg-primary rounded-xl p-6 text-white">
                     <h3 className="text-xl font-bold mb-4">
                       {locale === 'fr' ? 'Abonnez-vous' : locale === 'ar' ? 'اشترك' : 'Subscribe'}
                     </h3>
@@ -430,7 +391,7 @@ export default async function BlogPage({ params: { locale } }: BlogPageProps) {
                         {locale === 'fr' ? 'S\'abonner' : locale === 'ar' ? 'اشترك' : 'Subscribe'}
                       </button>
                     </div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
             </div>

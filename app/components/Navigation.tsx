@@ -68,6 +68,21 @@ export default function Navigation({ locale, translations, isLoggedIn = false }:
   const aboutText = typeof translations.about === 'string' 
     ? translations.about 
     : locale === 'fr' ? 'À propos' : locale === 'ar' ? 'حول' : 'About';
+  
+  // Get the courses text safely, ensuring it's a string
+  const coursesText = typeof translations.courses === 'string'
+    ? translations.courses
+    : locale === 'fr' ? 'Formations' : locale === 'ar' ? 'دورات' : 'Courses';
+
+  // Get the contact text safely, ensuring it's a string
+  const contactText = typeof translations.contact === 'string'
+    ? translations.contact
+    : locale === 'fr' ? 'Contact' : locale === 'ar' ? 'اتصل بنا' : 'Contact';
+
+  // Get the careers text safely, ensuring it's a string
+  const careersText = typeof translations.careers === 'string'
+    ? translations.careers
+    : locale === 'fr' ? 'Carrières' : locale === 'ar' ? 'وظائف' : 'Careers';
 
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-white shadow-md py-2' : 'bg-transparent py-4'}`}>
@@ -89,13 +104,13 @@ export default function Navigation({ locale, translations, isLoggedIn = false }:
               {aboutText}
             </Link>
             <Link href={`/${locale}/courses`} className={`${isScrolled ? 'text-neutral-dark' : 'text-white'} hover:text-primary-light transition-colors`}>
-              {translations.courses}
+              {coursesText}
             </Link>
             <Link href={`/${locale}/careers`} className={`${isScrolled ? 'text-neutral-dark' : 'text-white'} hover:text-primary-light transition-colors`}>
-              {translations.careers || (locale === 'fr' ? 'Carrières' : locale === 'ar' ? 'وظائف' : 'Careers')}
+              {careersText}
             </Link>
             <Link href={`/${locale}/contact`} className={`${isScrolled ? 'text-neutral-dark' : 'text-white'} hover:text-primary-light transition-colors`}>
-              {translations.contact}
+              {contactText}
             </Link>
 
             {/* Language Switcher */}
@@ -214,21 +229,21 @@ export default function Navigation({ locale, translations, isLoggedIn = false }:
                 onClick={toggleMenu}
                 className="text-neutral-dark hover:text-primary transition-colors py-2"
               >
-                {translations.courses}
+                {coursesText}
               </Link>
               <Link
                 href={`/${locale}/careers`}
                 onClick={toggleMenu}
                 className="text-neutral-dark hover:text-primary transition-colors py-2"
               >
-                {translations.careers || (locale === 'fr' ? 'Carrières' : locale === 'ar' ? 'وظائف' : 'Careers')}
+                {careersText}
               </Link>
               <Link
                 href={`/${locale}/contact`}
                 onClick={toggleMenu}
                 className="text-neutral-dark hover:text-primary transition-colors py-2"
               >
-                {translations.contact}
+                {contactText}
               </Link>
 
               {/* Language Options */}

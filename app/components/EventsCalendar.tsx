@@ -1,7 +1,6 @@
 "use client";
 
 import { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
 import { 
   FaCalendarAlt, 
   FaChevronLeft, 
@@ -295,284 +294,293 @@ export default function EventsCalendar({ locale, translations }: EventsCalendarP
   const upcomingEvents = getUpcomingEvents();
   
   return (
-    <section className="py-20 bg-white">
+    <section className="py-16 bg-background">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4"
-          >
-            {translations.title}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-neutral max-w-2xl mx-auto"
-          >
-            {translations.subtitle}
-          </motion.p>
+        {/* Calendar Header with Month Navigation */}
+        <div className="flex justify-between items-center mb-8">
+          <div className="flex items-center space-x-4">
+            <button
+              onClick={prevMonth}
+              className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-neutral-dark hover:bg-neutral-light/20 transition-colors"
+              aria-label="Previous month"
+            >
+              <FaChevronLeft className={isRTL ? "rotate-180" : ""} />
+            </button>
+            <h2 className="text-xl font-bold text-neutral-dark">
+              {formatMonthYear(currentMonth)}
+            </h2>
+            <button
+              onClick={nextMonth}
+              className="w-10 h-10 rounded-full bg-white shadow-sm flex items-center justify-center text-neutral-dark hover:bg-neutral-light/20 transition-colors"
+              aria-label="Next month"
+            >
+              <FaChevronRight className={isRTL ? "rotate-180" : ""} />
+            </button>
+          </div>
+          
+          {/* Mobile Filter Toggle */}
+          <div className="md:hidden">
+            <button
+              onClick={() => setShowFilters(!showFilters)}
+              className="flex items-center bg-white rounded-full px-4 py-2 shadow-sm text-sm font-medium text-neutral-dark"
+            >
+              <FaFilter className="mr-2" />
+              {translations.filterEvents}
+            </button>
+          </div>
+          
+          {/* Desktop Filter Categories */}
+          <div className="hidden md:flex space-x-2">
+            <button
+              onClick={() => setActiveCategory("all")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeCategory === "all"
+                  ? "bg-primary text-white"
+                  : "bg-white text-neutral-dark hover:bg-neutral-light/20"
+              }`}
+            >
+              {translations.categories.all}
+            </button>
+            <button
+              onClick={() => setActiveCategory("course")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeCategory === "course"
+                  ? "bg-primary text-white"
+                  : "bg-white text-neutral-dark hover:bg-neutral-light/20"
+              }`}
+            >
+              {translations.categories.course}
+            </button>
+            <button
+              onClick={() => setActiveCategory("workshop")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeCategory === "workshop"
+                  ? "bg-primary text-white"
+                  : "bg-white text-neutral-dark hover:bg-neutral-light/20"
+              }`}
+            >
+              {translations.categories.workshop}
+            </button>
+            <button
+              onClick={() => setActiveCategory("seminar")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeCategory === "seminar"
+                  ? "bg-primary text-white"
+                  : "bg-white text-neutral-dark hover:bg-neutral-light/20"
+              }`}
+            >
+              {translations.categories.seminar}
+            </button>
+            <button
+              onClick={() => setActiveCategory("campus")}
+              className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                activeCategory === "campus"
+                  ? "bg-primary text-white"
+                  : "bg-white text-neutral-dark hover:bg-neutral-light/20"
+              }`}
+            >
+              {translations.categories.campus}
+            </button>
+          </div>
         </div>
         
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Calendar Section */}
-          <motion.div 
-            initial={{ opacity: 0, x: -20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="lg:col-span-2 bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
-          >
-            {/* Calendar Header */}
-            <div className="flex items-center justify-between bg-primary/5 p-4 border-b border-gray-100">
-              <button 
-                onClick={prevMonth}
-                className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition-colors"
-                aria-label="Previous Month"
+        {/* Mobile Filters (Conditional Render) */}
+        {showFilters && (
+          <div className="md:hidden bg-white rounded-xl shadow-md p-4 mb-6">
+            <div className="flex justify-between items-center mb-4">
+              <h3 className="font-bold text-neutral-dark">
+                {translations.filterEvents}
+              </h3>
+              <button
+                onClick={() => setShowFilters(false)}
+                className="text-neutral-dark"
               >
-                <FaChevronLeft className={`text-neutral-dark ${isRTL ? 'transform rotate-180' : ''}`} />
+                <FaTimes />
               </button>
-              <h3 className="text-xl font-bold text-neutral-dark">
-                {formatMonthYear(currentMonth)}
-              </h3>
-              <div className="flex items-center gap-2">
-                <button
-                  onClick={() => setShowFilters(!showFilters)}
-                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition-colors relative"
-                  aria-label="Filter Events"
-                >
-                  <FaFilter className="text-neutral-dark" />
-                  {activeCategory !== 'all' && (
-                    <span className="absolute top-0 right-0 w-3 h-3 bg-primary rounded-full"></span>
-                  )}
-                </button>
-                <button 
-                  onClick={nextMonth}
-                  className="w-10 h-10 flex items-center justify-center rounded-full hover:bg-white transition-colors"
-                  aria-label="Next Month"
-                >
-                  <FaChevronRight className={`text-neutral-dark ${isRTL ? 'transform rotate-180' : ''}`} />
-                </button>
-              </div>
+            </div>
+            <div className="flex flex-wrap gap-2">
+              <button
+                onClick={() => setActiveCategory("all")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeCategory === "all"
+                    ? "bg-primary text-white"
+                    : "bg-neutral-light/20 text-neutral-dark"
+                }`}
+              >
+                {translations.categories.all}
+              </button>
+              <button
+                onClick={() => setActiveCategory("course")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeCategory === "course"
+                    ? "bg-primary text-white"
+                    : "bg-neutral-light/20 text-neutral-dark"
+                }`}
+              >
+                {translations.categories.course}
+              </button>
+              <button
+                onClick={() => setActiveCategory("workshop")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeCategory === "workshop"
+                    ? "bg-primary text-white"
+                    : "bg-neutral-light/20 text-neutral-dark"
+                }`}
+              >
+                {translations.categories.workshop}
+              </button>
+              <button
+                onClick={() => setActiveCategory("seminar")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeCategory === "seminar"
+                    ? "bg-primary text-white"
+                    : "bg-neutral-light/20 text-neutral-dark"
+                }`}
+              >
+                {translations.categories.seminar}
+              </button>
+              <button
+                onClick={() => setActiveCategory("campus")}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
+                  activeCategory === "campus"
+                    ? "bg-primary text-white"
+                    : "bg-neutral-light/20 text-neutral-dark"
+                }`}
+              >
+                {translations.categories.campus}
+              </button>
+            </div>
+          </div>
+        )}
+        
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
+          {/* Calendar Grid */}
+          <div className="lg:col-span-2 bg-white rounded-xl shadow-md overflow-hidden">
+            {/* Weekday Headers */}
+            <div className="grid grid-cols-7 bg-neutral-light/10 border-b">
+              {translations.days.map((day, index) => (
+                <div key={index} className="p-2 text-center text-sm font-medium text-neutral">
+                  {day}
+                </div>
+              ))}
             </div>
             
-            {/* Filters */}
-            {showFilters && (
-              <div className="p-4 bg-neutral-light/30 border-b border-gray-100 flex flex-wrap gap-2">
-                <button
-                  onClick={() => setActiveCategory('all')}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                    activeCategory === 'all' 
-                      ? 'bg-primary text-white' 
-                      : 'bg-white text-neutral-dark hover:bg-primary/10'
-                  }`}
-                >
-                  {translations.categories.all}
-                </button>
-                <button
-                  onClick={() => setActiveCategory('course')}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                    activeCategory === 'course' 
-                      ? 'bg-primary text-white' 
-                      : 'bg-white text-neutral-dark hover:bg-primary/10'
-                  }`}
-                >
-                  {translations.categories.course}
-                </button>
-                <button
-                  onClick={() => setActiveCategory('workshop')}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                    activeCategory === 'workshop' 
-                      ? 'bg-primary text-white' 
-                      : 'bg-white text-neutral-dark hover:bg-primary/10'
-                  }`}
-                >
-                  {translations.categories.workshop}
-                </button>
-                <button
-                  onClick={() => setActiveCategory('seminar')}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                    activeCategory === 'seminar' 
-                      ? 'bg-primary text-white' 
-                      : 'bg-white text-neutral-dark hover:bg-primary/10'
-                  }`}
-                >
-                  {translations.categories.seminar}
-                </button>
-                <button
-                  onClick={() => setActiveCategory('campus')}
-                  className={`px-3 py-1 rounded-full text-sm font-medium transition-colors ${
-                    activeCategory === 'campus' 
-                      ? 'bg-primary text-white' 
-                      : 'bg-white text-neutral-dark hover:bg-primary/10'
-                  }`}
-                >
-                  {translations.categories.campus}
-                </button>
-              </div>
-            )}
-            
-            {/* Calendar Grid */}
-            <div className="p-4">
-              {/* Days of week */}
-              <div className="grid grid-cols-7 mb-2">
-                {translations.days.map((day, index) => (
-                  <div key={index} className="text-center text-neutral font-medium text-sm py-2">
-                    {day}
-                  </div>
-                ))}
-              </div>
-              
-              {/* Calendar days */}
-              <div className="grid grid-cols-7 gap-2">
-                {days.map((day, index) => (
-                  <div 
-                    key={index} 
-                    className={`aspect-square relative rounded-lg ${
-                      !day ? 'bg-transparent' : 
-                      selectedDate && day && day.getDate() === selectedDate.getDate() ? 'bg-primary text-white' : 
-                      isToday(day) ? 'bg-primary/10' : 'bg-neutral-light/30 hover:bg-neutral-light/50'
-                    } ${day ? 'cursor-pointer' : ''} transition-colors flex items-center justify-center`}
-                    onClick={() => day && setSelectedDate(day)}
-                  >
-                    {day && (
-                      <>
-                        <span className={`text-sm ${selectedDate && day && day.getDate() === selectedDate.getDate() ? 'text-white' : 'text-neutral-dark'}`}>
-                          {day.getDate()}
-                        </span>
-                        {isToday(day) && (
-                          <span className="absolute bottom-1 left-1/2 transform -translate-x-1/2 text-[8px] font-medium text-primary">
-                            {translations.today}
-                          </span>
-                        )}
-                        {hasEvents(day) && (
-                          <span className={`absolute top-1 right-1 w-2 h-2 rounded-full ${
-                            selectedDate && day && day.getDate() === selectedDate.getDate() ? 'bg-white' : 'bg-primary'
-                          }`}></span>
-                        )}
-                      </>
-                    )}
-                  </div>
-                ))}
-              </div>
-            </div>
-            
-            {/* Selected Day Events */}
-            {selectedDate && (
-              <div className="p-4 border-t border-gray-100">
-                <h4 className="text-lg font-bold text-neutral-dark mb-3">
-                  {new Date(selectedDate).toLocaleDateString(
-                    locale === 'fr' ? 'fr-FR' : locale === 'ar' ? 'ar-SA' : 'en-US', 
-                    { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
-                  )}
-                </h4>
+            {/* Calendar Days */}
+            <div className="grid grid-cols-7 gap-1 p-4">
+              {days.map((day, index) => {
+                if (!day) {
+                  return <div key={`empty-${index}`} className="aspect-square"></div>;
+                }
                 
-                {selectedDateEvents.length > 0 ? (
-                  <div className="space-y-3">
-                    {selectedDateEvents.map(event => (
-                      <div key={event.id} className="flex gap-4 p-3 bg-neutral-light/20 rounded-lg hover:bg-neutral-light/30 transition-colors">
-                        <div className="w-2 self-stretch rounded-full" style={{ 
-                          backgroundColor: 
-                            event.category === 'course' ? '#4F46E5' : 
-                            event.category === 'workshop' ? '#16A34A' : 
-                            event.category === 'seminar' ? '#EA580C' :
-                            '#2563EB'
-                        }}></div>
-                        <div className="flex-grow">
-                          <h5 className="font-bold text-neutral-dark">{event.title[locale]}</h5>
-                          <div className="flex items-center text-sm text-neutral gap-4 mt-1">
-                            <div className="flex items-center">
-                              <FaClock className="mr-1 text-primary/70" />
-                              <span>{formatTime(event.startTime)} - {formatTime(event.endTime)}</span>
-                            </div>
-                            <div className="flex items-center">
-                              <FaMapMarkerAlt className="mr-1 text-primary/70" />
-                              <span>{event.location[locale]}</span>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    ))}
+                const isToday = day.toDateString() === new Date().toDateString();
+                const isSelected = selectedDate && day.toDateString() === selectedDate.toDateString();
+                const hasEventsToday = hasEvents(day);
+                
+                return (
+                  <div 
+                    key={day.getTime()} 
+                    className="relative"
+                  >
+                    <button
+                      onClick={() => setSelectedDate(day)}
+                      className={`w-full aspect-square flex flex-col items-center justify-center rounded-lg text-sm transition-colors ${
+                        isSelected
+                          ? 'bg-primary text-white'
+                          : isToday
+                          ? 'bg-neutral-light/30 text-neutral-dark'
+                          : 'hover:bg-neutral-light/20 text-neutral-dark'
+                      }`}
+                    >
+                      <span className={isToday && !isSelected ? 'font-bold' : ''}>
+                        {day.getDate()}
+                      </span>
+                      {hasEventsToday && !isSelected && (
+                        <span className="w-1.5 h-1.5 rounded-full bg-primary mt-1"></span>
+                      )}
+                    </button>
                   </div>
-                ) : (
-                  <p className="text-neutral italic">{translations.noEvents}</p>
-                )}
-              </div>
-            )}
-          </motion.div>
-          
-          {/* Upcoming Events Section */}
-          <motion.div
-            initial={{ opacity: 0, x: 20 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.2 }}
-            className="bg-white rounded-xl shadow-lg border border-gray-100 overflow-hidden"
-          >
-            <div className="p-4 bg-primary text-white">
-              <h3 className="text-lg font-bold flex items-center">
-                <FaCalendarAlt className="mr-2" />
-                {translations.viewAll}
-              </h3>
+                );
+              })}
             </div>
+          </div>
+          
+          {/* Events List */}
+          <div className="lg:col-span-1">
+            <h3 className="text-xl font-bold text-neutral-dark mb-4">
+              {selectedDate 
+                ? `${selectedDate.getDate()} ${translations.months[selectedDate.getMonth()]} ${selectedDate.getFullYear()}`
+                : translations.viewAll
+              }
+            </h3>
             
-            <div className="p-4">
-              {upcomingEvents.length > 0 ? (
-                <div className="space-y-6">
-                  {upcomingEvents.map(event => (
-                    <div key={event.id} className="group">
-                      <div className="aspect-video rounded-lg overflow-hidden mb-3">
-                        <img 
-                          src={event.image} 
-                          alt={event.title[locale]} 
-                          className="w-full h-full object-cover transform group-hover:scale-105 transition-transform duration-500"
-                        />
+            <div className="space-y-4">
+              {getEventsForDate(selectedDate).map((event) => (
+                <div 
+                  key={event.id}
+                  className="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden hover:shadow-md transition-all"
+                >
+                  <div className="aspect-video overflow-hidden">
+                    <img 
+                      src={event.image} 
+                      alt={event.title[locale as keyof typeof event.title]} 
+                      className="w-full h-full object-cover transform hover:scale-105 transition-transform duration-500"
+                    />
+                  </div>
+                  <div className="p-4">
+                    <span className={`px-2 py-0.5 text-xs text-white rounded-full ${
+                      event.category === 'course' 
+                        ? 'bg-primary'
+                        : event.category === 'workshop'
+                        ? 'bg-secondary'
+                        : event.category === 'seminar'
+                        ? 'bg-accent'
+                        : 'bg-neutral'
+                    }`}>
+                      {translations.categories[event.category as keyof typeof translations.categories]}
+                    </span>
+                    
+                    <h4 className="font-bold text-neutral-dark mt-2 mb-2">
+                      {event.title[locale as keyof typeof event.title]}
+                    </h4>
+                    
+                    <div className="text-sm text-neutral mb-3">
+                      <div className="flex items-center mb-1">
+                        <FaCalendarAlt className="mr-2 text-neutral-light" />
+                        <span>
+                          {new Date(event.date).getDate()} {translations.months[new Date(event.date).getMonth()]} {new Date(event.date).getFullYear()}
+                        </span>
                       </div>
-                      <div>
-                        <div className="flex justify-between items-center mb-2">
-                          <span className={`text-xs px-2 py-1 rounded-full font-medium ${
-                            event.category === 'course' ? 'bg-indigo-100 text-indigo-700' : 
-                            event.category === 'workshop' ? 'bg-green-100 text-green-700' : 
-                            event.category === 'seminar' ? 'bg-orange-100 text-orange-700' :
-                            'bg-blue-100 text-blue-700'
-                          }`}>
-                            {translations.categories[event.category as keyof typeof translations.categories]}
-                          </span>
-                          <span className="text-sm text-neutral">
-                            {event.date.toLocaleDateString(
-                              locale === 'fr' ? 'fr-FR' : locale === 'ar' ? 'ar-SA' : 'en-US', 
-                              { month: 'short', day: 'numeric' }
-                            )}
-                          </span>
-                        </div>
-                        <h4 className="font-bold text-neutral-dark mb-1">{event.title[locale]}</h4>
-                        <p className="text-sm text-neutral mb-3">{event.description[locale]}</p>
-                        <div className="flex items-center text-sm text-neutral gap-4 mb-3">
-                          <div className="flex items-center">
-                            <FaClock className="mr-1 text-primary/70" />
-                            <span>{formatTime(event.startTime)}</span>
-                          </div>
-                          <div className="flex items-center">
-                            <FaMapMarkerAlt className="mr-1 text-primary/70" />
-                            <span>{event.location[locale]}</span>
-                          </div>
-                        </div>
-                        <button className="w-full py-2 px-4 bg-primary hover:bg-primary-dark text-white rounded-lg transition-colors text-sm font-medium">
-                          {translations.registerNow}
-                        </button>
+                      <div className="flex items-center mb-1">
+                        <FaClock className="mr-2 text-neutral-light" />
+                        <span>{formatTime(event.startTime)} - {formatTime(event.endTime)}</span>
+                      </div>
+                      <div className="flex items-center">
+                        <FaMapMarkerAlt className="mr-2 text-neutral-light" />
+                        <span>{event.location[locale as keyof typeof event.location]}</span>
                       </div>
                     </div>
-                  ))}
+                    
+                    <p className="text-sm text-neutral mb-4">
+                      {event.description[locale as keyof typeof event.description]}
+                    </p>
+                    
+                    <button className="w-full py-2 bg-primary text-white rounded-lg hover:bg-primary-dark transition-colors text-sm font-medium">
+                      {translations.registerNow}
+                    </button>
+                  </div>
                 </div>
-              ) : (
-                <p className="text-neutral italic">{translations.noEvents}</p>
+              ))}
+              
+              {getEventsForDate(selectedDate).length === 0 && (
+                <div className="bg-white rounded-xl p-6 text-center border border-dashed border-neutral-light/50">
+                  <FaCalendarAlt className="mx-auto text-2xl text-neutral-light mb-2" />
+                  <p className="text-neutral">
+                    {translations.noEvents}
+                  </p>
+                </div>
               )}
             </div>
-          </motion.div>
+          </div>
         </div>
       </div>
     </section>

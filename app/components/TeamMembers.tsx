@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from 'react';
-import { motion } from 'framer-motion';
 import { FaLinkedinIn, FaTwitter, FaEnvelope, FaPlus, FaTimes } from 'react-icons/fa';
 import { Locale } from '../i18n/settings';
 
@@ -251,194 +250,171 @@ const teamMembers = [
 ];
 
 export default function TeamMembers({ locale, translations }: TeamMembersProps) {
-  const [activeFilter, setActiveFilter] = useState<string>('all');
-  const [selectedMember, setSelectedMember] = useState<null | typeof teamMembers[0]>(null);
-  const isRTL = locale === 'ar';
+  const [activeFilter, setActiveFilter] = useState('all');
+  const [selectedMember, setSelectedMember] = useState<number | null>(null);
   
-  const filteredMembers = activeFilter === 'all'
-    ? teamMembers
+  // Filter team members based on the active category
+  const filteredTeamMembers = activeFilter === 'all' 
+    ? teamMembers 
     : teamMembers.filter(member => member.category === activeFilter);
   
+  // Find the selected member data
+  const selectedMemberData = selectedMember 
+    ? teamMembers.find(member => member.id === selectedMember) 
+    : null;
+  
   return (
-    <section className="py-20 bg-white">
+    <div className="py-16 bg-background">
       <div className="container-custom">
-        <div className="text-center mb-12">
-          <motion.h2
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-            className="text-3xl md:text-4xl font-bold text-neutral-dark mb-4"
-          >
-            {translations.title}
-          </motion.h2>
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5, delay: 0.1 }}
-            className="text-neutral max-w-2xl mx-auto"
-          >
-            {translations.subtitle}
-          </motion.p>
-        </div>
-        
-        {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-2 mb-10">
-          <button
-            onClick={() => setActiveFilter('all')}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              activeFilter === 'all'
-                ? 'bg-primary text-white'
-                : 'bg-neutral-light/50 text-neutral-dark hover:bg-neutral-light'
+        {/* Category filters */}
+        <div className="flex flex-wrap justify-center mb-12 gap-3">
+          <button 
+            onClick={() => setActiveFilter('all')} 
+            className={`px-6 py-2 rounded-full transition-colors ${
+              activeFilter === 'all' 
+                ? 'bg-primary text-white' 
+                : 'bg-white text-neutral hover:bg-neutral-light/20'
             }`}
           >
             {translations.categories.all}
           </button>
-          <button
-            onClick={() => setActiveFilter('faculty')}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              activeFilter === 'faculty'
-                ? 'bg-primary text-white'
-                : 'bg-neutral-light/50 text-neutral-dark hover:bg-neutral-light'
+          <button 
+            onClick={() => setActiveFilter('faculty')} 
+            className={`px-6 py-2 rounded-full transition-colors ${
+              activeFilter === 'faculty' 
+                ? 'bg-primary text-white' 
+                : 'bg-white text-neutral hover:bg-neutral-light/20'
             }`}
           >
             {translations.categories.faculty}
           </button>
-          <button
-            onClick={() => setActiveFilter('administration')}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              activeFilter === 'administration'
-                ? 'bg-primary text-white'
-                : 'bg-neutral-light/50 text-neutral-dark hover:bg-neutral-light'
-            }`}
-          >
-            {translations.categories.administration}
-          </button>
-          <button
-            onClick={() => setActiveFilter('staff')}
-            className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
-              activeFilter === 'staff'
-                ? 'bg-primary text-white'
-                : 'bg-neutral-light/50 text-neutral-dark hover:bg-neutral-light'
+          <button 
+            onClick={() => setActiveFilter('staff')} 
+            className={`px-6 py-2 rounded-full transition-colors ${
+              activeFilter === 'staff' 
+                ? 'bg-primary text-white' 
+                : 'bg-white text-neutral hover:bg-neutral-light/20'
             }`}
           >
             {translations.categories.staff}
           </button>
+          <button 
+            onClick={() => setActiveFilter('administration')} 
+            className={`px-6 py-2 rounded-full transition-colors ${
+              activeFilter === 'administration' 
+                ? 'bg-primary text-white' 
+                : 'bg-white text-neutral hover:bg-neutral-light/20'
+            }`}
+          >
+            {translations.categories.administration}
+          </button>
         </div>
         
-        {/* Team Members Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-          {filteredMembers.map((member, index) => (
-            <motion.div
-              key={member.id}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.3, delay: index * 0.1 }}
-              className="bg-white rounded-xl border border-gray-200 overflow-hidden shadow-sm hover:shadow-md transition-shadow"
+        {/* Team members grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
+          {filteredTeamMembers.map((member) => (
+            <div 
+              key={member.id} 
+              className="bg-white rounded-xl shadow-md overflow-hidden transition-transform hover:-translate-y-1 duration-300"
             >
-              <div className="p-6 text-center">
-                <div className="w-32 h-32 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/10">
-                  <img 
-                    src={member.image} 
-                    alt={member.name[locale]} 
-                    className="w-full h-full object-cover"
-                  />
-                </div>
+              <div className="aspect-square overflow-hidden">
+                <img 
+                  src={member.image} 
+                  alt={member.name[locale as keyof typeof member.name]} 
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <div className="p-6">
                 <h3 className="text-xl font-bold text-neutral-dark mb-1">
-                  {member.name[locale]}
+                  {member.name[locale as keyof typeof member.name]}
                 </h3>
-                <p className="text-primary mb-4 text-sm">
-                  {member.role[locale]}
+                <p className="text-neutral-light mb-4">
+                  {member.role[locale as keyof typeof member.role]}
                 </p>
-                
-                <button
-                  onClick={() => setSelectedMember(member)}
-                  className="inline-flex items-center justify-center text-sm font-medium text-primary hover:text-primary-dark transition-colors"
+                <button 
+                  onClick={() => setSelectedMember(member.id)}
+                  className="inline-flex items-center text-primary hover:text-primary-dark font-medium"
                 >
-                  <span className="mr-1">{translations.viewProfile}</span>
-                  <FaPlus size={10} />
+                  <FaPlus className="mr-2" />
+                  {translations.viewProfile}
                 </button>
               </div>
-            </motion.div>
+            </div>
           ))}
         </div>
         
-        {/* Member Profile Modal */}
-        {selectedMember && (
-          <div className="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center z-50 p-4 md:p-6" onClick={() => setSelectedMember(null)}>
-            <div 
-              className={`bg-white rounded-xl shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto ${isRTL ? 'font-arabic' : 'font-sans'}`}
-              onClick={(e) => e.stopPropagation()}
-              dir={isRTL ? 'rtl' : 'ltr'}
-            >
-              <div className="relative">
+        {/* Modal for team member details */}
+        {selectedMember && selectedMemberData && (
+          <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50 p-4">
+            <div className="bg-white rounded-xl shadow-xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+              <div className="p-6 lg:p-8 relative">
                 <button 
                   onClick={() => setSelectedMember(null)}
-                  className="absolute top-4 right-4 w-8 h-8 bg-white rounded-full shadow-md flex items-center justify-center text-neutral-dark hover:text-primary transition-colors z-10"
-                  aria-label={translations.closeProfile}
+                  className="absolute top-6 right-6 text-neutral-light hover:text-neutral-dark"
                 >
-                  <FaTimes />
+                  <FaTimes size={24} />
                 </button>
                 
-                <div className="md:flex">
-                  <div className="md:w-2/5 bg-primary/5 p-8 text-center">
-                    <div className="w-40 h-40 md:w-48 md:h-48 rounded-full overflow-hidden mx-auto mb-4 border-4 border-primary/10">
-                      <img 
-                        src={selectedMember.image} 
-                        alt={selectedMember.name[locale]} 
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <h3 className="text-2xl font-bold text-neutral-dark mb-1">
-                      {selectedMember.name[locale]}
-                    </h3>
-                    <p className="text-primary mb-6 font-medium">
-                      {selectedMember.role[locale]}
-                    </p>
-                    
-                    <div className="flex justify-center gap-3 mb-6">
-                      <a 
-                        href={`mailto:${selectedMember.email}`}
-                        className="w-9 h-9 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-colors"
-                        aria-label={`Email ${selectedMember.name[locale]}`}
-                      >
-                        <FaEnvelope />
-                      </a>
-                      {selectedMember.linkedin && (
-                        <a 
-                          href={selectedMember.linkedin}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-9 h-9 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-colors"
-                          aria-label={`LinkedIn profile for ${selectedMember.name[locale]}`}
-                        >
-                          <FaLinkedinIn />
-                        </a>
-                      )}
-                      {selectedMember.twitter && (
-                        <a 
-                          href={selectedMember.twitter}
-                          target="_blank"
-                          rel="noopener noreferrer"
-                          className="w-9 h-9 rounded-full bg-primary/10 hover:bg-primary text-primary hover:text-white flex items-center justify-center transition-colors"
-                          aria-label={`Twitter profile for ${selectedMember.name[locale]}`}
-                        >
-                          <FaTwitter />
-                        </a>
-                      )}
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                  <div className="md:col-span-1">
+                    <div className="mb-6">
+                      <div className="rounded-xl overflow-hidden mb-4">
+                        <img 
+                          src={selectedMemberData.image} 
+                          alt={selectedMemberData.name[locale as keyof typeof selectedMemberData.name]} 
+                          className="w-full h-auto"
+                        />
+                      </div>
+                      
+                      <h3 className="text-2xl font-bold text-neutral-dark mb-1">
+                        {selectedMemberData.name[locale as keyof typeof selectedMemberData.name]}
+                      </h3>
+                      <p className="text-primary font-medium mb-4">
+                        {selectedMemberData.role[locale as keyof typeof selectedMemberData.role]}
+                      </p>
                     </div>
                     
-                    <div className="text-left">
-                      <h4 className="font-bold text-neutral-dark mb-2 text-sm uppercase tracking-wider">
+                    <div className="mb-6">
+                      <h4 className="text-lg font-bold text-neutral-dark mb-3">
+                        {translations.contactMember}
+                      </h4>
+                      <div className="space-y-3">
+                        <a href={`mailto:${selectedMemberData.email}`} className="flex items-center text-neutral hover:text-primary transition-colors">
+                          <FaEnvelope className="mr-3" />
+                          <span>{selectedMemberData.email}</span>
+                        </a>
+                        {selectedMemberData.linkedin && (
+                          <a href={selectedMemberData.linkedin} target="_blank" rel="noopener noreferrer" className="flex items-center text-neutral hover:text-primary transition-colors">
+                            <FaLinkedinIn className="mr-3" />
+                            <span>LinkedIn</span>
+                          </a>
+                        )}
+                        {selectedMemberData.twitter && (
+                          <a href={selectedMemberData.twitter} target="_blank" rel="noopener noreferrer" className="flex items-center text-neutral hover:text-primary transition-colors">
+                            <FaTwitter className="mr-3" />
+                            <span>Twitter</span>
+                          </a>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                  
+                  <div className="md:col-span-2">
+                    <div className="mb-6">
+                      <p className="text-neutral leading-relaxed mb-4">
+                        {selectedMemberData.bio[locale as keyof typeof selectedMemberData.bio]}
+                      </p>
+                    </div>
+                    
+                    <div>
+                      <h4 className="text-lg font-bold text-neutral-dark mb-3">
                         Specialties
                       </h4>
                       <div className="flex flex-wrap gap-2">
-                        {selectedMember.specialties[locale].map((specialty, index) => (
+                        {selectedMemberData.specialties[locale as keyof typeof selectedMemberData.specialties].map((specialty, index) => (
                           <span 
                             key={index}
-                            className="inline-block px-3 py-1 bg-primary/10 text-primary text-xs rounded-full"
+                            className="px-3 py-1 bg-neutral-light/20 text-neutral rounded-full text-sm"
                           >
                             {specialty}
                           </span>
@@ -446,31 +422,21 @@ export default function TeamMembers({ locale, translations }: TeamMembersProps) 
                       </div>
                     </div>
                   </div>
-                  
-                  <div className="md:w-3/5 p-8">
-                    <h4 className="text-xl font-bold text-neutral-dark mb-4 border-b border-gray-200 pb-2">
-                      Biography
-                    </h4>
-                    <p className="text-neutral mb-6">
-                      {selectedMember.bio[locale]}
-                    </p>
-                    
-                    <div className="text-center mt-8">
-                      <a 
-                        href={`mailto:${selectedMember.email}`}
-                        className="inline-flex items-center justify-center bg-primary hover:bg-primary-dark text-white py-3 px-6 rounded-lg transition-colors"
-                      >
-                        <FaEnvelope className="mr-2" />
-                        {translations.contactMember}
-                      </a>
-                    </div>
-                  </div>
+                </div>
+                
+                <div className="mt-8 pt-6 border-t border-gray-200 flex justify-end">
+                  <button 
+                    onClick={() => setSelectedMember(null)}
+                    className="px-6 py-2 bg-neutral-light/20 text-neutral-dark rounded-md hover:bg-neutral-light/30 transition-colors"
+                  >
+                    {translations.closeProfile}
+                  </button>
                 </div>
               </div>
             </div>
           </div>
         )}
       </div>
-    </section>
+    </div>
   );
 } 

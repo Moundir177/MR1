@@ -169,7 +169,7 @@ export default async function HomePage({ params: { locale } }: HomePageProps) {
                 <div className="flex justify-between items-center">
                   <span className="font-bold text-lg text-primary">35,000 DA</span>
                   <a href={`/${locale}/courses/web-development`} className="btn btn-primary py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    {translations.courses.learnMore}
+                    {typeof translations.courses.learnMore === 'string' ? translations.courses.learnMore : 'Learn More'}
                   </a>
                 </div>
               </div>
@@ -215,7 +215,7 @@ export default async function HomePage({ params: { locale } }: HomePageProps) {
                 <div className="flex justify-between items-center">
                   <span className="font-bold text-lg text-secondary">30,000 DA</span>
                   <a href={`/${locale}/courses/graphic-design`} className="btn bg-secondary hover:bg-secondary-dark text-white py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    {translations.courses.learnMore}
+                    {typeof translations.courses.learnMore === 'string' ? translations.courses.learnMore : 'Learn More'}
                   </a>
                 </div>
               </div>
@@ -261,7 +261,7 @@ export default async function HomePage({ params: { locale } }: HomePageProps) {
                 <div className="flex justify-between items-center">
                   <span className="font-bold text-lg text-accent">28,000 DA</span>
                   <a href={`/${locale}/courses/digital-marketing`} className="btn bg-accent hover:bg-accent-dark text-white py-2 px-4 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-                    {translations.courses.learnMore}
+                    {typeof translations.courses.learnMore === 'string' ? translations.courses.learnMore : 'Learn More'}
                   </a>
                 </div>
               </div>
@@ -280,7 +280,11 @@ export default async function HomePage({ params: { locale } }: HomePageProps) {
       <Faq locale={locale} translations={translations.faq} />
       
       {/* Blog Preview Section */}
-      <BlogPreview locale={locale} translations={translations.blog} />
+      <BlogPreview locale={locale} translations={{
+        title: translations.blog.title,
+        subtitle: translations.blog.subtitle,
+        viewAll: translations.blog.viewAll
+      }} />
       
       {/* Newsletter Section */}
       <Newsletter locale={locale} translations={translations.newsletter} />

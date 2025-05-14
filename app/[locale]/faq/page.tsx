@@ -4,7 +4,6 @@ import Footer from '../../components/Footer';
 import FAQ from '../../components/Faq';
 import fs from 'fs';
 import path from 'path';
-import { motion } from 'framer-motion';
 import Link from 'next/link';
 
 interface FAQPageProps {
@@ -51,22 +50,12 @@ export default async function FAQPage({ params: { locale } }: FAQPageProps) {
         <section className="py-20 bg-primary text-white">
           <div className="container-custom">
             <div className="text-center mb-4">
-              <motion.h1 
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5 }}
-                className="text-3xl md:text-4xl font-bold mb-4"
-              >
+              <h1 className="text-3xl md:text-4xl font-bold mb-4">
                 {translations.faq.title}
-              </motion.h1>
-              <motion.p
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: 0.1 }}
-                className="text-xl max-w-2xl mx-auto"
-              >
+              </h1>
+              <p className="text-xl max-w-2xl mx-auto">
                 {translations.faq.subtitle}
-              </motion.p>
+              </p>
             </div>
           </div>
         </section>
@@ -77,13 +66,7 @@ export default async function FAQPage({ params: { locale } }: FAQPageProps) {
         {/* Contact CTA */}
         <section className="py-20 bg-neutral-light/30">
           <div className="container-custom">
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ duration: 0.5 }}
-              className="bg-white rounded-xl p-8 shadow-md border border-gray-100 max-w-3xl mx-auto text-center"
-            >
+            <div className="bg-white rounded-xl p-8 shadow-md border border-gray-100 max-w-3xl mx-auto text-center">
               <h2 className="text-2xl md:text-3xl font-bold text-neutral-dark mb-4">
                 {locale === 'fr' 
                   ? "Vous avez d'autres questions?" 
@@ -108,7 +91,7 @@ export default async function FAQPage({ params: { locale } }: FAQPageProps) {
                   ? "اتصل بنا" 
                   : "Contact Us"}
               </Link>
-            </motion.div>
+            </div>
           </div>
         </section>
       </main>

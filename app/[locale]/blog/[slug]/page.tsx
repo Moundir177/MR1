@@ -35,8 +35,63 @@ async function getTranslations(locale: Locale) {
   }
 }
 
-// Mock blog posts data - in a real app, this would come from an API or CMS
-const blogPostsData = {
+// Add a type for blog post data
+interface BlogPostData {
+  id: string;
+  translations: {
+    en: {
+      title: string;
+      content: string;
+      category: string;
+      readNext: string;
+      sharePost: string;
+      tableOfContents: string;
+      authorPrefix: string;
+      publishedPrefix: string;
+      minuteRead: string;
+      relatedArticles: string;
+      tags: string[];
+    };
+    fr: {
+      title: string;
+      content: string;
+      category: string;
+      readNext: string;
+      sharePost: string;
+      tableOfContents: string;
+      authorPrefix: string;
+      publishedPrefix: string;
+      minuteRead: string;
+      relatedArticles: string;
+      tags: string[];
+    };
+    ar: {
+      title: string;
+      content: string;
+      category: string;
+      readNext: string;
+      sharePost: string;
+      tableOfContents: string;
+      authorPrefix: string;
+      publishedPrefix: string;
+      minuteRead: string;
+      relatedArticles: string;
+      tags: string[];
+    };
+  };
+  image: string;
+  date: string;
+  author: {
+    en: string;
+    fr: string;
+    ar: string;
+  };
+  readTime: number;
+  relatedPosts: string[];
+}
+
+// Fix the type definition for blogPostsData
+const blogPostsData: Record<string, BlogPostData> = {
   'web-dev-trends': {
     id: 'web-dev-trends',
     translations: {

@@ -48,9 +48,9 @@ module.exports = {
         }
       },
       fontFamily: {
-        sans: ['var(--font-inter)'],
-        heading: ['var(--font-playfair)'],
-        arabic: ['var(--font-cairo)'],
+        sans: ['system-ui', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Open Sans', 'Helvetica Neue', 'sans-serif'],
+        heading: ['Georgia', 'Times New Roman', 'Times', 'serif'],
+        arabic: ['Tahoma', 'Arial', 'sans-serif'],
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',

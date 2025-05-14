@@ -113,7 +113,7 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
             transition={{ duration: 0.5 }}
             className="text-4xl md:text-5xl font-bold text-neutral-dark mb-4"
           >
-            {translations.title}
+            {translations.title || (locale === 'fr' ? 'Contactez-nous' : locale === 'ar' ? 'اتصل بنا' : 'Contact Us')}
           </motion.h1>
           <motion.p
             initial={{ opacity: 0, y: 20 }}
@@ -121,7 +121,7 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-lg text-neutral max-w-xl mx-auto"
           >
-            {translations.subtitle}
+            {translations.subtitle || (locale === 'fr' ? 'Nous sommes à votre écoute' : locale === 'ar' ? 'نحن هنا للإجابة على استفساراتك' : 'We are here to help')}
           </motion.p>
         </div>
         
@@ -134,7 +134,13 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
             className="lg:col-span-1 bg-primary text-white rounded-xl overflow-hidden"
           >
             <div className="p-8 md:p-10">
-              <h2 className="text-2xl font-bold mb-6">{translations.contact.title}</h2>
+              <h2 className="text-2xl font-bold mb-6">
+                {translations.contact && translations.contact.title ? 
+                  translations.contact.title : 
+                  locale === 'fr' ? 'Informations de contact' : 
+                  locale === 'ar' ? 'معلومات الاتصال' : 
+                  'Contact Information'}
+              </h2>
               
               <div className="space-y-6">
                 <div className="flex items-start">
@@ -145,7 +151,13 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                     <h3 className="text-lg font-semibold mb-1">
                       {locale === 'fr' ? 'Adresse' : locale === 'ar' ? 'العنوان' : 'Address'}
                     </h3>
-                    <p className="text-white/80">{translations.contact.address}</p>
+                    <p className="text-white/80">
+                      {translations.contact && translations.contact.address ? 
+                        translations.contact.address : 
+                        locale === 'fr' ? '123 Boulevard Mohammed V, Casablanca, Maroc' :
+                        locale === 'ar' ? '123 شارع محمد الخامس، الدار البيضاء، المغرب' :
+                        '123 Mohammed V Boulevard, Casablanca, Morocco'}
+                    </p>
                   </div>
                 </div>
                 
@@ -157,7 +169,11 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                     <h3 className="text-lg font-semibold mb-1">
                       {locale === 'fr' ? 'Téléphone' : locale === 'ar' ? 'الهاتف' : 'Phone'}
                     </h3>
-                    <p className="text-white/80">{translations.contact.phone}</p>
+                    <p className="text-white/80">
+                      {translations.contact && translations.contact.phone ? 
+                        translations.contact.phone : 
+                        '+212 522 123 456'}
+                    </p>
                   </div>
                 </div>
                 
@@ -169,7 +185,11 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                     <h3 className="text-lg font-semibold mb-1">
                       {locale === 'fr' ? 'Email' : locale === 'ar' ? 'البريد الإلكتروني' : 'Email'}
                     </h3>
-                    <p className="text-white/80">{translations.contact.email}</p>
+                    <p className="text-white/80">
+                      {translations.contact && translations.contact.email ? 
+                        translations.contact.email : 
+                        'contact@miracademy.edu'}
+                    </p>
                   </div>
                 </div>
               </div>
@@ -230,7 +250,13 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                   {locale === 'fr' ? 'Message envoyé!' : locale === 'ar' ? 'تم إرسال الرسالة!' : 'Message Sent!'}
                 </h3>
                 <p className="text-neutral mb-8 max-w-md">
-                  {translations.success}
+                  {translations.success || (
+                    locale === 'fr' 
+                      ? 'Merci de nous avoir contacté! Nous avons bien reçu votre message et vous répondrons dans les plus brefs délais.' 
+                      : locale === 'ar' 
+                      ? 'شكرا للتواصل معنا! لقد تلقينا رسالتك وسنرد عليك في أقرب وقت ممكن.'
+                      : 'Thank you for contacting us! We have received your message and will get back to you as soon as possible.'
+                  )}
                 </p>
                 <button
                   onClick={() => setStatus('idle')}
@@ -244,7 +270,11 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="name" className="block text-neutral-dark font-medium mb-2">
-                      {translations.form.name} <span className="text-red-500">*</span>
+                      {translations.form && translations.form.name ? 
+                        translations.form.name : 
+                        locale === 'fr' ? 'Votre Nom' : 
+                        locale === 'ar' ? 'اسمك' : 
+                        'Your Name'} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="text"
@@ -254,13 +284,21 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder={translations.form.name}
+                      placeholder={translations.form && translations.form.name ? 
+                        translations.form.name : 
+                        locale === 'fr' ? 'Votre Nom' : 
+                        locale === 'ar' ? 'اسمك' : 
+                        'Your Name'}
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="email" className="block text-neutral-dark font-medium mb-2">
-                      {translations.form.email} <span className="text-red-500">*</span>
+                      {translations.form && translations.form.email ? 
+                        translations.form.email : 
+                        locale === 'fr' ? 'Votre Email' : 
+                        locale === 'ar' ? 'بريدك الإلكتروني' : 
+                        'Your Email'} <span className="text-red-500">*</span>
                     </label>
                     <input
                       type="email"
@@ -270,13 +308,21 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                       onChange={handleChange}
                       required
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder={translations.form.email}
+                      placeholder={translations.form && translations.form.email ? 
+                        translations.form.email : 
+                        locale === 'fr' ? 'Votre Email' : 
+                        locale === 'ar' ? 'بريدك الإلكتروني' : 
+                        'Your Email'}
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="phone" className="block text-neutral-dark font-medium mb-2">
-                      {translations.form.phone}
+                      {translations.form && translations.form.phone ? 
+                        translations.form.phone : 
+                        locale === 'fr' ? 'Téléphone' : 
+                        locale === 'ar' ? 'رقم الهاتف' : 
+                        'Phone Number'}
                     </label>
                     <input
                       type="tel"
@@ -285,13 +331,21 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                       value={formData.phone}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder={translations.form.phone}
+                      placeholder={translations.form && translations.form.phone ? 
+                        translations.form.phone : 
+                        locale === 'fr' ? 'Téléphone' : 
+                        locale === 'ar' ? 'رقم الهاتف' : 
+                        'Phone Number'}
                     />
                   </div>
                   
                   <div>
                     <label htmlFor="subject" className="block text-neutral-dark font-medium mb-2">
-                      {translations.form.subject}
+                      {translations.form && translations.form.subject ? 
+                        translations.form.subject : 
+                        locale === 'fr' ? 'Sujet' : 
+                        locale === 'ar' ? 'الموضوع' : 
+                        'Subject'}
                     </label>
                     <input
                       type="text"
@@ -300,14 +354,22 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                       value={formData.subject}
                       onChange={handleChange}
                       className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                      placeholder={translations.form.subject}
+                      placeholder={translations.form && translations.form.subject ? 
+                        translations.form.subject : 
+                        locale === 'fr' ? 'Sujet' : 
+                        locale === 'ar' ? 'الموضوع' : 
+                        'Subject'}
                     />
                   </div>
                 </div>
                 
                 <div>
                   <label htmlFor="message" className="block text-neutral-dark font-medium mb-2">
-                    {translations.form.message} <span className="text-red-500">*</span>
+                    {translations.form && translations.form.message ? 
+                      translations.form.message : 
+                      locale === 'fr' ? 'Votre Message' : 
+                      locale === 'ar' ? 'رسالتك' : 
+                      'Your Message'} <span className="text-red-500">*</span>
                   </label>
                   <textarea
                     id="message"
@@ -317,13 +379,23 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                     required
                     rows={6}
                     className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent"
-                    placeholder={translations.form.message}
+                    placeholder={translations.form && translations.form.message ? 
+                      translations.form.message : 
+                      locale === 'fr' ? 'Comment pouvons-nous vous aider?' : 
+                      locale === 'ar' ? 'كيف يمكننا مساعدتك؟' : 
+                      'How can we help you?'}
                   ></textarea>
                 </div>
                 
                 {status === 'error' && (
                   <div className="bg-red-50 text-red-600 p-3 rounded-lg">
-                    {errorMessage}
+                    {errorMessage || translations.error || (
+                      locale === 'fr' 
+                        ? 'Une erreur s\'est produite lors de l\'envoi de votre message. Veuillez réessayer.' 
+                        : locale === 'ar' 
+                        ? 'حدث خطأ أثناء إرسال رسالتك. يرجى المحاولة مرة أخرى.'
+                        : 'There was an error sending your message. Please try again.'
+                    )}
                   </div>
                 )}
                 
@@ -338,7 +410,11 @@ export default function ContactForm({ locale, translations }: ContactFormProps) 
                     ) : (
                       <FaPaperPlane className="mr-2" />
                     )}
-                    {translations.form.submit}
+                    {translations.form && translations.form.submit ? 
+                      translations.form.submit : 
+                      locale === 'fr' ? 'Envoyer' : 
+                      locale === 'ar' ? 'إرسال' : 
+                      'Send Message'}
                   </button>
                 </div>
               </form>
